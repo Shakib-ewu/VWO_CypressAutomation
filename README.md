@@ -99,6 +99,6 @@ Contributions to my practise.cydeo.com project are welcome! If you find any issu
 For any questions or inquiries, please contact Sakib Sarkar at imam.ewu@gmail.com.
 
 ## Report Screenshots
-<img src="pictures/1.JPG">
-<img src="pictures/2.JPG">
+<img src="Screenshots/1.png">
+<img src="Screenshots/2.png">
          
