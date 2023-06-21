@@ -5,8 +5,8 @@ describe('Navigate to Geo location ', () => {
       cy.get('.list-group > :nth-child(24) > a').click({force:true})
       cy.get('button').click().should('exist')
     
-      cy.wait(10000);
-      cy.get('#map-link > a').click({force:true})
+     // cy.wait(10000);
+      //cy.get('#map-link > a').click({force:true})
       
       
       

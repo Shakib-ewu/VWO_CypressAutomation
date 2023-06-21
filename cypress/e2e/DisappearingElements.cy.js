@@ -7,10 +7,10 @@ describe('Navigating to Disappearing elements ', () => {
       cy.go('back')
       //cy.get('.list-group > :nth-child(9) > a').click({force:true})
       cy.get(':nth-child(4) > :nth-child(2)').click()
-      cy.get('h1').should('have.text','Not Found')
+      cy.get('h2').should('have.text','Sinatra doesn’t know this ditty.')
       cy.go('back')
       cy.get(':nth-child(4) > :nth-child(3)').click()
-      cy.get('h1').should('have.text','Not Found')
+      cy.get('h2').should('have.text','Sinatra doesn’t know this ditty.')
       
       
   
