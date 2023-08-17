@@ -1,4 +1,4 @@
-describe("Verifying Dashboard", () => {
+describe("Verifying Split URL", () => {
 
     beforeEach(() => {
 
@@ -20,7 +20,7 @@ describe("Verifying Dashboard", () => {
         const lastName = `John${Math.floor(100 + Math.random() * 900)}`;
         cy.get('[data-qa="page-su-v1-lname"]').type(lastName).should('be.visible');
 
-       // cy.get('[data-qa="page-su-v1-lname"]').type('Chris')
+       
         cy.get('[data-qa="page-su-v1-pnumber"]').type('01723645867')
         function generateRandomPassword(length) {
             const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -58,33 +58,28 @@ describe("Verifying Dashboard", () => {
         cy.get("button[class='btn btn--inverted btn--primary Px(20px) Mt(40px)']").click()
         
     })
-    it("Verifying Full Flow of Dashboard", () => {
+    it("Split URL full flow testing", () => {
         cy.get('[data-qa="nav-main-test"]').click()
-        cy.get('[data-qa="nav-main-test-ab"]').click().should('be.visible')
+        cy.get('[data-qa="nav-main-test-split"]').click().should('be.visible');
         cy.get('[data-qa="rumuhacelo"]').click()
-        cy.get('[data-qa="xetibixeli"]').type('bdtraveller.com')
-        //cy.get('[data-qa="pebukebele"]').type('fusionbd.com')
-        cy.get('[data-qa="lecuhibeme"]').click()
-        cy.get('[data-qa="pohikufabu"] > :nth-child(1)')
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click().invoke('removeAttr', 'target').invoke('attr', 'target', '_blank');
-        cy.wait(70000)
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-        cy.get('.border--top > .btn > :nth-child(3)').click()
-        cy.get('[data-qa="musevazihi"]').type('Sakib 123')
-        cy.get('[data-qa="zazenimono"]').click()
-        cy.get('[data-qa="xetibixeli"]').type('yt.com')
-        cy.get('[data-qa="wowaxayeki"]').click()
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
+        //cy.get('').type
+        const URL = `lx123${Math.floor(100000 + Math.random() * 900000)}.com`;
+        cy.get('.flex-content-group-child>.input-wrapper--static-validation:nth-child(1)').eq(0).type(URL).should('be.visible');
+        const URL1 = `lx123${Math.floor(100000 + Math.random() * 900000)}.com`;
+        cy.get('.flex-content-group-child>.input-wrapper--static-validation:nth-child(1)').eq(1).
+        type(URL1).should('be.visible');
+        cy.get('[data-qa="xuxodedoqi"]').type('youtube.com')
+        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click({force:true});
         cy.get('[data-qa="fakevalozi"]').click()
+        cy.get("div[class='border--top D(f) Jc(c) Py(10px)']").click()
+        cy.get('#new-goal-name').type('Dell 5520')
+        cy.get('[data-qa="wowaxayeki"]').click().should('be.visible');
+        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click();
+        cy.get('[data-qa="jakowutesa jomafetebu"] > [data-qa="caxanizewo"] > [data-qa="hohalinuti"]').clear().type('55');
         cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-       // cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-        //cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-        //cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-        cy.get('.step-counter-button.step-counter-button--next').click({force:true})
-        cy.get('[data-qa="potunigela"] > .ng-binding').click()
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-        cy.get('[data-qa="btn-preview-start-campaign"]').click()
+        cy.get('[data-qa="btn-preview-start-campaign"]').click();
         cy.get('[data-qa="live-preview-btn"]').click()
+        
            
     })
 })

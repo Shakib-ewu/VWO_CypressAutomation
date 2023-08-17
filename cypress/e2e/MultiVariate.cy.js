@@ -1,4 +1,4 @@
-describe("Verifying Dashboard", () => {
+describe("Verifying Multivariate", () => {
 
     beforeEach(() => {
 
@@ -58,33 +58,31 @@ describe("Verifying Dashboard", () => {
         cy.get("button[class='btn btn--inverted btn--primary Px(20px) Mt(40px)']").click()
         
     })
-    it("Verifying Full Flow of Dashboard", () => {
+    it("Multivariate full flow testing", () => {
         cy.get('[data-qa="nav-main-test"]').click()
-        cy.get('[data-qa="nav-main-test-ab"]').click().should('be.visible')
+        cy.get('[data-qa="nav-main-test-multivariate"]').click()
         cy.get('[data-qa="rumuhacelo"]').click()
-        cy.get('[data-qa="xetibixeli"]').type('bdtraveller.com')
-        //cy.get('[data-qa="pebukebele"]').type('fusionbd.com')
-        cy.get('[data-qa="lecuhibeme"]').click()
-        cy.get('[data-qa="pohikufabu"] > :nth-child(1)')
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click().invoke('removeAttr', 'target').invoke('attr', 'target', '_blank');
+
+        const typo = `lx123${Math.floor(100000 + Math.random() * 900000)}.com`;
+        cy.get('[data-qa="xetibixeli"]').type(typo).should('be.visible');
+        cy.get('[data-qa="opesuxkore"]').click()
+       // cy.get('[data-qa="zidonotuci"] > .menu-content-block > .dropdown-menu-add-item').click()
+
+      /* cy.get("input[placeholder='Type to search']").type('Test')
+        cy.get('#create-hypothesis-solution').type('Testing purpose only')
+        cy.get('#create-hypothesis-problem').type('Sign up form is required to check')
+        cy.get(':nth-child(2) > .score-box > :nth-child(5)').click()
+        cy.get(':nth-child(3) > .score-box > :nth-child(3)').click()
+        cy.get("input[placeholder='E.g. Homepage']").type('Thank you')
+        cy.get('[data-qa="btn-submit-hypothesis-creation-form"]').click()*/
+
+        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
         cy.wait(70000)
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-        cy.get('.border--top > .btn > :nth-child(3)').click()
-        cy.get('[data-qa="musevazihi"]').type('Sakib 123')
-        cy.get('[data-qa="zazenimono"]').click()
-        cy.get('[data-qa="xetibixeli"]').type('yt.com')
-        cy.get('[data-qa="wowaxayeki"]').click()
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-        cy.get('[data-qa="fakevalozi"]').click()
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-       // cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-        //cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-        //cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-        cy.get('.step-counter-button.step-counter-button--next').click({force:true})
-        cy.get('[data-qa="potunigela"] > .ng-binding').click()
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-        cy.get('[data-qa="btn-preview-start-campaign"]').click()
-        cy.get('[data-qa="live-preview-btn"]').click()
+        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click({force:true})
+
+
+
+        
            
     })
 })
