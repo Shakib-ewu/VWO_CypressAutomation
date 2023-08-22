@@ -60,31 +60,24 @@ describe("Verifying Split URL", () => {
     })
     it("Split URL full flow testing", () => {
         cy.get('[data-qa="nav-main-test"]').click()
-        cy.get('[data-qa="nav-main-test-split"]').click().should('be.visible');
+        cy.get('[data-qa="nav-main-test-mobile-ab"]').click().should('be.visible');
+        cy.wait(1000)
         cy.get('[data-qa="rumuhacelo"]').click()
-        //cy.get('').type
-        const URL = `lx123${Math.floor(100000 + Math.random() * 900000)}.com`;
-        cy.get('.flex-content-group-child>.input-wrapper--static-validation:nth-child(1)').eq(0).type(URL).should('be.visible');
+        cy.get('[data-qa="gozohekati"]').click()
+        cy.wait(10000);
+        cy.get('[data-qa="bofeqicine"]').click()
+        cy.get('[data-qa="rumuhacelo"]').click()
+        cy.get('#mobile-app-name').type('Test123')
+        cy.get('.btn.btn--primary.btn--inverted.ng-binding.ng-scope').click().should('exist')
+        cy.get('.border--all > .btn').click()
+        cy.get('.active > button').click()
+       // cy.get('[ng-class="{'active' : vm.selectedTabViewState === vm.TabViewStateEnum.CONFIGURATIONS}"] > button')
+        //cy.get('[data-qa="no-variables-create-variable-btn"] > span').click()
+        /*cy.get('[data-qa="variable-name-input"]').type('Lx')
+        cy.get('[data-qa="mobile-variable-label-string"]').click()
+        cy.get('[data-qa="mobile-variable-default-value-string"]').type('null')
+        cy.get('[data-qa="pabakazuta"] > [data-qa="create-variable-btn"]').click()*/
+        
 
-        const URL1 = `lx123${Math.floor(100000 + Math.random() * 900000)}.com`;
-        cy.get('.flex-content-group-child>.input-wrapper--static-validation:nth-child(1)').eq(1).
-        type(URL1).should('be.visible');
-        
-        cy.get('[data-qa="xuxodedoqi"]').type('youtube.com')
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click({force:true});
-        cy.get('[data-qa="fakevalozi"]').click()
-        cy.get("div[class='border--top D(f) Jc(c) Py(10px)']").click()
-        cy.get('#new-goal-name').type('Dell 5520')
-        cy.get('[data-qa="wowaxayeki"]').click().should('be.visible');
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click();
-        cy.get('[data-qa="jakowutesa jomafetebu"] > [data-qa="caxanizewo"] > [data-qa="hohalinuti"]').clear().type('55');
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-        cy.get('[data-qa="btn-preview-start-campaign"]').click();
-        cy.get('[data-qa="live-preview-btn"]').click()
-        
-           
     })
 })
-
-
-    

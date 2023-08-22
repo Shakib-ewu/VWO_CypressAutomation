@@ -1,4 +1,4 @@
-describe("Verifying Split URL", () => {
+describe("Verifying Insights", () => {
 
     beforeEach(() => {
 
@@ -20,7 +20,7 @@ describe("Verifying Split URL", () => {
         const lastName = `John${Math.floor(100 + Math.random() * 900)}`;
         cy.get('[data-qa="page-su-v1-lname"]').type(lastName).should('be.visible');
 
-       
+       // cy.get('[data-qa="page-su-v1-lname"]').type('Chris')
         cy.get('[data-qa="page-su-v1-pnumber"]').type('01723645867')
         function generateRandomPassword(length) {
             const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -58,33 +58,63 @@ describe("Verifying Split URL", () => {
         cy.get("button[class='btn btn--inverted btn--primary Px(20px) Mt(40px)']").click()
         
     })
-    it("Split URL full flow testing", () => {
-        cy.get('[data-qa="nav-main-test"]').click()
-        cy.get('[data-qa="nav-main-test-split"]').click().should('be.visible');
-        cy.get('[data-qa="rumuhacelo"]').click()
-        //cy.get('').type
-        const URL = `lx123${Math.floor(100000 + Math.random() * 900000)}.com`;
-        cy.get('.flex-content-group-child>.input-wrapper--static-validation:nth-child(1)').eq(0).type(URL).should('be.visible');
+    it("Verifying Full Flow of Insights", () => {
+        cy.get('[data-qa="nav-main-insights"]').click()
+        cy.get('[data-qa="nav-main-track-funnel"]').click().should('be.visible')
+        cy.get('[data-qa="bogusetipe"]').click()
+        cy.get('[data-qa="opesuxkore"]').click()
+        cy.get('.dropdown-menu-add-item>.ng-binding').eq(0).click({force:true})
+        cy.get('[data-qa="alert-modal-ok-button"]').click()
+        cy.get('[data-qa="junegaxoye"]').eq(0).type('Funnels.com')
+        cy.get('[data-qa="goal-create-button"]').click()
+        cy.get('[data-qa="keromacovi"]').click()
+        cy.get('#track-goal-notes').type('thank you')
+        cy.get('[data-qa="junegaxoye"]').eq(0).type('test.com')
+        cy.get('[data-qa="goal-create-button"]').click()
+        cy.get('[data-qa="btn-start-campaign-later"]').click()
+        cy.get('[data-qa="btn-url-mode-advance"]').click()
+        cy.get('[data-qa="pogavefata"]').click()
+        cy.get('[data-qa="nav-main-track-funnel"]').click()
+        cy.get('[data-qa="bogusetipe"]').click()
+        cy.get('[data-qa="opesuxkore"]').click()
+        cy.get('#select-box-next-option-10-0 > [data-qa="uugosdfapi"] > [data-qa="katugomaju"] > [data-qa="ciwowehedi"]').click()
+        cy.get('[data-qa="goal-add-new"]').click()
+        cy.get('[data-qa="opesuxkore"]').click()
+        cy.get('[data-qa="zidonotuci"] > [data-qa="satavigisi"] > [data-qa="xorohoyami"]').click()
+        cy.get('[data-qa="alert-modal-ok-button"]').click()
+        cy.get('[data-qa="junegaxoye"]').eq(0).type('Funnels.com')
+        cy.get('[data-qa="goal-create-button"]').click()
+        cy.get('[data-qa="keromacovi"]').click()
+        cy.get('#track-goal-notes').type('Welcome')
+        cy.get('[data-qa="junegaxoye"]').eq(0).type('openhrm.com')
+        cy.get('[data-qa="goal-create-button"]').click()
+        cy.get('[data-qa="btn-start-campaign-later"]').click()
+        cy.get('[data-qa="btn-url-mode-advance"]').click()
+        cy.get('[data-qa="pogavefata"]').click()
+        cy.get('[data-qa="nav-main-track-funnel"]').click()
+        cy.get('[data-qa="bogusetipe"]').click()
+        cy.get('[data-qa="opesuxkore"]').click()
+        cy.get('#select-box-next-option-16-0 > [data-qa="uugosdfapi"] > [data-qa="katugomaju"] > [data-qa="ciwowehedi"]').click()
+        cy.get('[data-qa="goal-add-new"]').click()
+        cy.get('[data-qa="opesuxkore"]').click()
+        cy.get('#select-box-next-option-16-1 > [data-qa="uugosdfapi"] > [data-qa="katugomaju"] > [data-qa="ciwowehedi"]').click()
+        cy.get('[data-qa="funnel-create-button"]').click()
+        cy.get('[data-qa="btn-start-campaign-later"]').click()
+        cy.get('[data-qa="funnel-name"]').should('have.text','New Funnel')
 
-        const URL1 = `lx123${Math.floor(100000 + Math.random() * 900000)}.com`;
-        cy.get('.flex-content-group-child>.input-wrapper--static-validation:nth-child(1)').eq(1).
-        type(URL1).should('be.visible');
+
+
+
+
+
+
+       
+       
+
         
-        cy.get('[data-qa="xuxodedoqi"]').type('youtube.com')
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click({force:true});
-        cy.get('[data-qa="fakevalozi"]').click()
-        cy.get("div[class='border--top D(f) Jc(c) Py(10px)']").click()
-        cy.get('#new-goal-name').type('Dell 5520')
-        cy.get('[data-qa="wowaxayeki"]').click().should('be.visible');
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click();
-        cy.get('[data-qa="jakowutesa jomafetebu"] > [data-qa="caxanizewo"] > [data-qa="hohalinuti"]').clear().type('55');
-        cy.get('[data-qa="1Ip2vuhc7csn1A7SG83"]').click()
-        cy.get('[data-qa="btn-preview-start-campaign"]').click();
-        cy.get('[data-qa="live-preview-btn"]').click()
-        
-           
+
+       
+
+
     })
 })
-
-
-    
