@@ -102,6 +102,8 @@ describe("Verifying Insights", () => {
         cy.get('[data-qa="btn-start-campaign-later"]').click()
         cy.get('[data-qa="funnel-name"]').should('have.text','New Funnel')
 
+        //https://jam.dev/c/ec2975df-b328-4fda-bfad-f926672e3423
+
 
 
 
