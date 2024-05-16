@@ -1,67 +1,47 @@
-describe("Verifying Dashboard", () => {
+describe("Verifying Homepage", () => {
 
     beforeEach(() => {
 
+        cy.viewport(1920,1080);
         cy.intercept('/some-3rd-party-script.js*').as('externalScript');
-        cy.visit("https://app.vwo.com/#/login")
-        cy.get('[data-qa="bericafeqo"]').click();
-
-        const email = `lx123${Math.floor(100000 + Math.random() * 900000)}@cydeo.com`;
-        cy.get('[data-qa="page-su-step1-v1-email"]').type(email).should('be.visible');
-
-        cy.get("div[class='Mt(10px) Ta(c)'] button[class='button W(100%) btn-modal-form-submit']").click({force:true})
-        cy.get('[data-qa="page-su-v1-fname"]').type('demo')
-        cy.get('[data-qa="page-su-v1-lname"]').type('Chris')
-        cy.get('[data-qa="page-su-v1-pnumber"]').type('01723645867')
-        cy.get('[data-qa="page-su-v1-pwd"]').type('Sa123456789')
-        cy.get("div[class='Mt(10px) Ta(c)'] button[class='button btn-modal-form-submit W(100%)']").click()
-        cy.wait(20000)
-        cy.get('#select-box-activator-0 > vwo-transclude > [data-qa="opesuxkore"]').click()
-        cy.get('#select-box-next-option-0-1 > [data-qa="uugosdfapi"] > [data-qa="katugomaju"] > .select-box-option').click()
-        cy.get('[data-qa="opesuxkore"]').click()
-        cy.get('#select-box-next-option-1-5 > [data-qa="uugosdfapi"] > [data-qa="katugomaju"] > .select-box-option').click()
-        cy.get('[data-qa="btn-next"]').click()
-        cy.get('[data-qa="giyanibano"]').click()
-        cy.get('[data-qa="btn-next"]').click()
-        cy.wait(15000)
-        cy.get('[data-qa="btn-next"]').click()
-        cy.get("input[name='primaryUrl']").type('youtube.com')
-        cy.get('[data-qa="btn-next"]').click()
-        cy.get('[data-qa="btn-next"]').click()
-        cy.get("button[class='btn btn--inverted btn--primary Px(20px) Mt(40px)']").click()
+        cy.visit('/')
+        cy.get("button[class='p-0 m-0 block md:inline-flex w-full']").contains('accept').click()
+        cy.wait(4000)
         
+        //cy.get('[data-qa="hocewoqisi"]').type('nocag98406@rc3s.com')
+        //cy.get('[data-qa="jobodapuxe"]').type('Ss@123456789').should('be.visible')
+        //cy.get('[data-qa="wusegasoju"] > .checkbox-radio').click()
+        //cy.get('[data-qa="sibequkica"]').click({force:true})
+        //cy.get("a[class='active']").click() logo click
+
     })
-    it("Sign in with email and password", () => {
-      cy.get('[data-qa="nav-main-home"] > [data-qa="nav-label"]').click()
-        cy.get('.page-heading').should('have.text','Dashboard')
-        cy.wait(1000)
-        cy.get('[data-qa="goals-empty-state-btn"]').click()
-        cy.get("button[title='Edit goal name']").click();
-        cy.get("input[placeholder='Goal Name']").clear();
-        cy.get("input[placeholder='Goal Name']").type('Sakib Net goal');
-        cy.get('[data-qa="oqanadxozu"]').click()
-        cy.get('#select-box-next-option-3-4 > [data-qa="uugosdfapi"] > [data-qa="katugomaju"] > .select-box-option').click()
-        cy.get('[data-qa="junegaxoye"]').type('shopify.com')
-        cy.get('[data-qa="junegaxoye"]').type('bdhfbeh.com')
-        cy.get('.step-counter-button.step-counter-button--next').click()
-         // second div for typo
-       // cy.get('[data-qa="hayasuqopi"]').type('lx.com')//hayasuqopi
-        cy.get('[data-qa="keromacovi"]').click()
-        cy.get('[data-qa="pitomicowo"]').type('Thank you')
-        cy.get('[data-qa="add-labels"] > span').click()
-        cy.get("input[placeholder='Labels']").type('Button')
-        cy.get('[data-qa="hayasuqopi"]').type('lx.com')
-        cy.get('[data-qa="goal-create-button"]').click()
-        cy.get("button[class='Fxs(0) btn']").click()
-        cy.get('[data-qa="btn-url-mode-advance"]').click()
-        cy.get('[data-qa="pogavefata"]').click().should('be.visible');
-
-        //cy.get("button[title='Edit goal name']").click().type('dfef')
-
+    it.skip("Verifying Hero Banner", () => {
        
-           
+        cy.wait(4000)
+        cy.get("button[class='p-0 m-0 block md:inline-flex w-full']").contains('accept').click()
+        cy.get('.swiper-slide-active > .relative > .absolute').click()
+        cy.get('.h-full > .text-center').contains('All Products')
+        cy.wait(5000)
+        cy.get("body > header:nth-child(2) > nav:nth-child(1) > div:nth-child(1) > a:nth-child(1)").click()
+        cy.get('.swiper-pagination > :nth-child(2)').click()
+        cy.get('.swiper-slide-active > .relative > .absolute > .flex-col > .flex > .inline-flex').click()
+        cy.get('.h-full > .text-center').contains('Reebok')
+        cy.get("body > header:nth-child(2) > nav:nth-child(1) > div:nth-child(1) > a:nth-child(1)").click()
+        cy.get('.swiper-pagination > :nth-child(3)').click()
+        cy.get('.swiper-slide-active > .relative > .absolute > .flex-col > .flex > .inline-flex').click()
+        cy.get('.h-full > .text-center').contains('Converse')
+        cy.get("body > header:nth-child(2) > nav:nth-child(1) > div:nth-child(1) > a:nth-child(1)").click()
+        cy.get('.swiper-pagination > :nth-child(4)').click()
+        cy.get('.swiper-slide-active > .relative > .absolute > .flex-col > .flex > .inline-flex').click()
+        cy.get('.h-full > .text-center').contains('Steve Madden')
+        cy.get("body > header:nth-child(2) > nav:nth-child(1) > div:nth-child(1) > a:nth-child(1)").click()
+
+    })
+
+    it("Brand Scroller verification" , ()=>{
+        cy.get('.brand-container > :nth-child(1) > .swiper').should('be.visible')
+        cy.get('.swiper-slide-active > .w-full').eq(1).click({force:true})
+        cy.get('.h-full > .text-center').contains('Crocs')
+        cy.get("body > header:nth-child(2) > nav:nth-child(1) > div:nth-child(1) > a:nth-child(1)").click()
     })
 })
-
-
-    
